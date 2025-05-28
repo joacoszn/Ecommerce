@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGrowshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>iGrowshop</h1>
+        <img src="imagenes/LogoGrow.png" alt="Logo de iGrowshop">
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Reseñas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="productos-container">
+                <div class="card">
+                    <img src="imagenes/DoSiDos Auto.jpg" alt="DoSiDos Auto">
+                    <h3>Do-Si-Dos Fem (RQS)</h3>
+                    <p>Semillas fem-auto en blister de 3.</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/Purplematic-CBD.jpg" alt="Purplematic CBD">
+                    <h3>Purplematic CBD Fem (RQS)</h3>
+                    <p>Semillas fem-cbd en blister de 3.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resenas">
+            <h2>Reseñas</h2>
+            <div class="resenas-container">
+                <div class="resena">
+                    <p>"Excelente calidad y servicio!"</p>
+                    <strong>- Cliente 1</strong>
+                </div>
+                <div class="resena">
+                    <p>"Me encantó la variedad de productos."</p>
+                    <strong>- Cliente 2</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h3>Formulario de Contacto</h3>
+            <form action="https://formspree.io/f/tuformspree" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 iGrowshop - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
