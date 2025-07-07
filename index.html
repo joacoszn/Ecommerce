@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tu tienda de confianza para productos de cultivo indoor y outdoor. Encuentra semillas, fertilizantes, iluminación y más.">
+    <meta name="keywords" content="growshop, cultivo indoor, cultivo outdoor, semillas, fertilizantes, iluminación, hidroponía, indoor, outdoor">
+    <meta name="author" content="THC Growshop">
+    <meta name="theme-color" content="#27AE60">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thcgrowshop.com/">
+    <meta property="og:title" content="GrowShop - Tu tienda de cultivo">
+    <meta property="og:description" content="Tu tienda de confianza para productos de cultivo indoor y outdoor">
+    <meta property="og:image" content="imagenes/Logo.png">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thcgrowshop.com/">
+    <meta property="twitter:title" content="GrowShop - Tu tienda de cultivo">
+    <meta property="twitter:description" content="Tu tienda de confianza para productos de cultivo indoor y outdoor">
+    <meta property="twitter:image" content="imagenes/Logo.png">
+
+    <title>GrowShop - Tu tienda de cultivo</title>
+    
+    <!-- Preconnect para recursos externos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="fonts/Bronova Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/Bronova Bold.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="imagenes/Logo.png">
+    <link rel="apple-touch-icon" href="imagenes/Logo.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Scripts -->
+    <script>
+      // Detectar si JavaScript está habilitado
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+    </script>
+</head>
+<body class="page page--home">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- Header -->
+    <header class="main-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                <a href="index.html" class="main-nav__logo-link" aria-label="Ir a inicio">
+                    <img src="imagenes/Logo.png" alt="THC Growshop Logo" class="main-nav__logo-img">
+                </a>
+                
+                <!-- Menú de navegación -->
+                <button class="main-nav__mobile-toggle" aria-expanded="false" aria-controls="main-nav-menu" data-mobile-menu-toggle>
+                    <span class="main-nav__toggle-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Menú</span>
+                </button>
+                
+                <ul class="main-nav__list" id="main-nav-menu" data-mobile-menu>
+                    <li class="main-nav__item"><a href="index.html" class="main-nav__link main-nav__link--active" aria-current="page">Inicio</a></li>
+                    <li class="main-nav__item"><a href="productos.html" class="main-nav__link">Equipamiento</a></li>
+                    <li class="main-nav__item"><a href="semillas.html" class="main-nav__link">Semillas</a></li>
+                    <li class="main-nav__item"><a href="api-demo.html" class="main-nav__link">API Demo</a></li>
+                    <li class="main-nav__item"><a href="index.html#sobre-nosotros" class="main-nav__link">Sobre Nosotros</a></li>
+                    <li class="main-nav__item"><a href="#contacto" class="main-nav__link">Contacto</a></li>
+                </ul>
+                
+                <!-- Carrito y búsqueda -->
+                <div class="header__actions">
+                    <button class="header__search-toggle" aria-label="Buscar">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    
+                    <a href="carrito.html" class="header__cart" aria-label="Carrito de compras">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="header__cart-count cart-count">0</span>
+                        <span class="sr-only">Artículos en el carrito: </span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Búsqueda móvil -->
+        <div class="header__search">
+            <div class="container">
+                <form class="search-form" role="search" aria-label="Buscar productos">
+                    <label for="search" class="sr-only">Buscar productos</label>
+                    <input type="search" id="search" class="search-form__input" placeholder="Buscar productos...">
+                    <button type="submit" class="search-form__submit" aria-label="Buscar">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section Premium -->
+        <section class="page-landing__hero" id="inicio">
+            <div class="page-landing__hero-content">
+                <div class="page-landing__logo-container">
+                    <img src="imagenes/Logo.png" alt="THC Growshop Logo" class="page-landing__logo" width="200" height="67" loading="eager">
+                </div>
+                <h1 class="page-landing__title">
+                    <span class="page-landing__title-line">CULTIVÁ CALIDAD</span>
+                    <span class="page-landing__title-divider">&</span>
+                    <span class="page-landing__title-line">FUMÁ CALIDAD</span>
+                </h1>
+                <p class="page-landing__tagline">La tienda #1 de cultivo en Argentina</p>
+                <div class="page-landing__cta-container">
+                    <a href="semillas.html" class="btn btn--primary btn--lg page-landing__cta">
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                        <span>Explorar Semillas</span>
+                    </a>
+                    <a href="productos.html" class="btn btn--secondary btn--lg page-landing__cta">
+                        <i class="fas fa-tools" aria-hidden="true"></i>
+                        <span>Ver Equipamiento</span>
+                    </a>
+                    <a href="api-demo.html" class="btn btn--outline btn--lg page-landing__cta">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        <span>Demo API</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="hero-decoration">
+                <div class="hero-decoration__line hero-decoration__line--top"></div>
+                <div class="hero-decoration__line hero-decoration__line--bottom"></div>
+                <div class="hero-decoration__dots">
+                    <span class="hero-decoration__dot"></span>
+                    <span class="hero-decoration__dot"></span>
+                    <span class="hero-decoration__dot"></span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Premium Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-medal" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-card__title">Calidad Premium</h3>
+                        <p class="feature-card__description">Productos seleccionados de los mejores proveedores mundiales</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-shipping-fast" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-card__title">Envío Gratis</h3>
+                        <p class="feature-card__description">En compras superiores a $50.000 por toda Argentina</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-user-shield" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-card__title">Compra Segura</h3>
+                        <p class="feature-card__description">Transacciones protegidas y datos seguros</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-headset" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-card__title">Soporte 24/7</h3>
+                        <p class="feature-card__description">Asesoramiento profesional cuando lo necesites</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Categories Preview Section -->
+        <section class="categories-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nuestras Especialidades</h2>
+                    <p class="section-subtitle">Descubre lo mejor en cultivo profesional</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card category-card--large">
+                        <div class="category-card__content">
+                            <div class="category-card__header">
+                                <i class="fas fa-seedling category-card__icon" aria-hidden="true"></i>
+                                <h3 class="category-card__title">Semillas Premium</h3>
+                            </div>
+                            <p class="category-card__description">Genéticas exclusivas de los bancos más reconocidos</p>
+                            <div class="category-card__stats">
+                                <span class="category-card__stat">
+                                    <strong>12+</strong> variedades
+                                </span>
+                                <span class="category-card__stat">
+                                    <strong>5★</strong> calificación
+                                </span>
+                            </div>
+                            <a href="semillas.html" class="category-card__cta">
+                                Explorar <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-card__content">
+                            <div class="category-card__header">
+                                <i class="fas fa-lightbulb category-card__icon" aria-hidden="true"></i>
+                                <h3 class="category-card__title">Iluminación</h3>
+                            </div>
+                            <p class="category-card__description">Sistemas LED de última generación</p>
+                            <a href="productos.html" class="category-card__cta">
+                                Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-card__content">
+                            <div class="category-card__header">
+                                <i class="fas fa-leaf category-card__icon" aria-hidden="true"></i>
+                                <h3 class="category-card__title">Nutrientes</h3>
+                            </div>
+                            <p class="category-card__description">Fertilizantes orgánicos premium</p>
+                            <a href="productos.html" class="category-card__cta">
+                                Descubrir <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="site-footer__content">
+            <p class="site-footer__copyright">&copy; <span id="currentYear"></span> THC Growshop. Todos los derechos reservados.</p>
+            
+            <nav class="site-footer__nav" aria-label="Navegación de pie de página">
+                <ul class="site-footer__nav-list">
+                    <li><a href="#inicio" class="site-footer__nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="site-footer__nav-link">Equipamiento</a></li>
+                    <li><a href="semillas.html" class="site-footer__nav-link">Semillas</a></li>
+                    <li><a href="#sobre-nosotros" class="site-footer__nav-link">Sobre Nosotros</a></li>
+                    <li><a href="#" class="site-footer__nav-link">Términos y Condiciones</a></li>
+                    <li><a href="#" class="site-footer__nav-link">Política de Privacidad</a></li>
+                </ul>
+            </nav>
+            
+            <div class="site-footer__socials">
+                <a href="#" class="site-footer__social-link" aria-label="Síguenos en Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="site-footer__social-link" aria-label="Síguenos en Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="site-footer__social-link" aria-label="Síguenos en Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

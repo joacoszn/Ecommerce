@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Semillas premium de cannabis en THC Growshop. Genéticas exclusivas, feminizadas y autoflorecientes de los mejores bancos.">
+    <meta name="theme-color" content="#27ae60">
+    <meta name="author" content="THC Growshop">
+    <meta property="og:title" content="Semillas Premium de Cannabis - THC Growshop">
+    <meta property="og:description" content="Descubre nuestra colección exclusiva de semillas de cannabis. Genéticas premium, feminizadas y autoflorecientes de bancos reconocidos mundialmente.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thcgrowshop.com/semillas">
+    <meta property="og:image" content="https://thcgrowshop.com/imagenes/banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Semillas Premium de Cannabis - THC Growshop</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="imagenes/Logo.png">
+    <link rel="apple-touch-icon" href="imagenes/Logo.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="fonts/Bronova Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/Bronova Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="imagenes/Logo.png" as="image">
+    <link rel="preload" href="data/seeds.json" as="fetch" crossorigin>
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page page--semillas" data-page="semillas">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- Header -->
+    <header class="main-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                <a href="index.html" class="main-nav__logo-link" aria-label="Ir a inicio">
+                    <img src="imagenes/Logo.png" alt="THC Growshop Logo" class="main-nav__logo-img">
+                </a>
+                
+                <!-- Menú de navegación -->
+                <button class="main-nav__mobile-toggle" aria-expanded="false" aria-controls="main-nav-menu" data-mobile-menu-toggle>
+                    <span class="main-nav__toggle-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Menú</span>
+                </button>
+                
+                <ul class="main-nav__list" id="main-nav-menu" data-mobile-menu>
+                    <li class="main-nav__item"><a href="index.html" class="main-nav__link">Inicio</a></li>
+                    <li class="main-nav__item"><a href="productos.html" class="main-nav__link">Equipamiento</a></li>
+                    <li class="main-nav__item"><a href="semillas.html" class="main-nav__link main-nav__link--active" aria-current="page">Semillas</a></li>
+                    <li class="main-nav__item"><a href="api-demo.html" class="main-nav__link">API Demo</a></li>
+                    <li class="main-nav__item"><a href="index.html#sobre-nosotros" class="main-nav__link">Sobre Nosotros</a></li>
+                    <li class="main-nav__item"><a href="#contacto" class="main-nav__link">Contacto</a></li>
+                </ul>
+                
+                <!-- Carrito y búsqueda -->
+                <div class="header__actions">
+                    <button class="header__search-toggle" aria-label="Buscar">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    
+                    <a href="carrito.html" class="header__cart" aria-label="Carrito de compras">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="header__cart-count cart-count">0</span>
+                        <span class="sr-only">Artículos en el carrito: </span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Búsqueda móvil -->
+        <div class="header__search">
+            <div class="container">
+                <form class="search-form" role="search" aria-label="Buscar productos">
+                    <label for="search" class="sr-only">Buscar productos</label>
+                    <input type="search" id="search" class="search-form__input" placeholder="Buscar productos..." autocomplete="off">
+                    <button type="submit" class="search-form__submit" aria-label="Buscar">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main" role="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title">Semillas de Cannabis</h1>
+                    <p class="lead">Descubre nuestra selección de semillas de la más alta calidad</p>
+                </div>
+            </section>
+            
+            <!-- Filtros de semillas -->
+            <div class="filters-container" id="filters-container">
+                <div class="filters-grid">
+                    <!-- Buscador -->
+                    <div class="filter-group search-container">
+                        <label for="search-input" class="filter-label">Buscar</label>
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="search" 
+                               id="search-input" 
+                               class="search-input" 
+                               placeholder="Buscar semillas..."
+                               aria-label="Buscar semillas">
+                    </div>
+                    
+                    <!-- Filtro por tipo -->
+                    <div class="filter-group">
+                        <label for="type-filter" class="filter-label">Tipo</label>
+                        <select id="type-filter" class="filter-select">
+                            <option value="">Todos los tipos</option>
+                            <option value="feminizada">Feminizadas</option>
+                            <option value="autofloreciente">Autoflorecientes</option>
+                            <option value="regular">Regulares</option>
+                            <option value="cbd">Alto en CBD</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Filtro por genética -->
+                    <div class="filter-group">
+                        <label for="genetics-filter" class="filter-label">Genética</label>
+                        <select id="genetics-filter" class="filter-select">
+                            <option value="">Todas las genéticas</option>
+                            <option value="indica">Indica</option>
+                            <option value="sativa">Sativa</option>
+                            <option value="hibrida">Híbrida</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Filtro por THC -->
+                    <div class="filter-group">
+                        <label for="thc-filter" class="filter-label">Nivel de THC</label>
+                        <select id="thc-filter" class="filter-select">
+                            <option value="">Cualquier nivel</option>
+                            <option value="bajo">Bajo (menos del 10%)</option>
+                            <option value="medio">Medio (10-20%)</option>
+                            <option value="alto">Alto (más del 20%)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grid de semillas -->
+            <div id="seeds-grid" class="product-grid">
+                <!-- Las semillas se cargarán dinámicamente aquí -->
+            </div>
+            
+            <!-- Paginación -->
+            <nav class="pagination" aria-label="Navegación de semillas" id="pagination-container">
+                <a href="#" class="pagination__link pagination__link--disabled" aria-label="Página anterior" id="prev-page">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <div class="pagination__pages" id="pagination-pages">
+                    <!-- Los números de página se generarán dinámicamente -->
+                </div>
+                <a href="#" class="pagination__link" aria-label="Página siguiente" id="next-page">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="site-footer__content container">
+            <nav class="site-footer__nav" aria-label="Navegación de pie de página">
+                <ul class="site-footer__nav-list">
+                    <li><a href="index.html" class="site-footer__nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="site-footer__nav-link">Equipamiento</a></li>
+                    <li><a href="semillas.html" class="site-footer__nav-link">Semillas</a></li>
+                    <li><a href="#" class="site-footer__nav-link">Términos</a></li>
+                    <li><a href="#" class="site-footer__nav-link">Privacidad</a></li>
+                </ul>
+            </nav>
+            <div class="site-footer__socials">
+                <a href="#" class="site-footer__social-link" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="site-footer__social-link" aria-label="Síguenos en Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="site-footer__social-link" aria-label="Síguenos en Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="site-footer__copyright">&copy; <span id="currentYear"></span> THC Growshop. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de servicios -->
+    <script src="js/services/cart.service.js"></script>
+    <script src="js/services/notification.service.js"></script>
+    
+    <!-- Controlador unificado del carrito -->
+    <script src="js/unified-cart-controller.js"></script>
+    
+    <!-- Scripts de página -->
+    <script src="js/seeds.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
