@@ -1,0 +1,307 @@
+/* ================================================
+   TIPOGRAFÍA - THC GROWSHOP
+   ================================================ */
+
+/* Encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+}
+
+/* Párrafos */
+p {
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-relaxed);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Enlaces */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+a:hover {
+  color: var(--color-secondary-dark);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* Texto pequeño */
+small,
+.text-small {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Texto grande */
+.text-large {
+  font-size: var(--font-size-lg);
+}
+
+/* Texto extra grande */
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+
+/* Pesos de fuente */
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Alineación de texto */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Colores de texto */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-info {
+  color: var(--color-info);
+}
+
+/* Estilos especiales para growshop */
+.text-cannabis {
+  color: var(--color-cannabis);
+  font-weight: var(--font-weight-medium);
+}
+
+.text-organic {
+  color: var(--color-organic);
+  font-weight: var(--font-weight-medium);
+}
+
+.text-hydro {
+  color: var(--color-hydro);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Texto decorativo */
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* Truncamiento de texto */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Limitación de líneas */
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.text-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.text-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+/* Listas */
+ul,
+ol {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: var(--space-xs);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Listas sin estilo */
+.list-none {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Citas */
+blockquote {
+  border-left: 4px solid var(--color-secondary);
+  padding-left: var(--space-lg);
+  margin: var(--space-lg) 0;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+/* Código */
+code,
+pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+}
+
+code {
+  background-color: var(--color-bg-alt);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+}
+
+pre {
+  background-color: var(--color-bg-alt);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-normal);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Marca/resaltado */
+mark {
+  background-color: var(--color-secondary-ultra-light);
+  color: var(--color-primary);
+  padding: var(--space-xs);
+  border-radius: var(--radius-xs);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  h3 {
+    font-size: var(--font-size-xl);
+  }
+  
+  h4 {
+    font-size: var(--font-size-lg);
+  }
+}

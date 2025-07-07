@@ -1,0 +1,272 @@
+/* ===============================================
+   SISTEMA DE VARIABLES CSS AVANZADO - THC GROWSHOP
+   Sistema de diseño completo con tokens escalables
+   =============================================== */
+
+:root {
+  /* ===============================================
+     PALETA DE COLORES COMPLETA
+     =============================================== */
+  
+  /* Colores principales - Escala de grises */
+  --color-primary-50: #f9fafb;
+  --color-primary-100: #f3f4f6;
+  --color-primary-200: #e5e7eb;
+  --color-primary-300: #d1d5db;
+  --color-primary-400: #9ca3af;
+  --color-primary-500: #6b7280;
+  --color-primary-600: #4b5563;
+  --color-primary-700: #374151;
+  --color-primary-800: #1f2937;
+  --color-primary-900: #111827;
+  --color-primary-950: #000000;
+  
+  /* Colores secundarios - Dorado premium */
+  --color-secondary-50: #fefce8;
+  --color-secondary-100: #fef9c3;
+  --color-secondary-200: #fef08a;
+  --color-secondary-300: #fde047;
+  --color-secondary-400: #facc15;
+  --color-secondary-500: #eab308;
+  --color-secondary-600: #ca8a04;
+  --color-secondary-700: #a16207;
+  --color-secondary-800: #854d0e;
+  --color-secondary-900: #713f12;
+  --color-secondary-950: #D4AF37;
+  
+  /* Colores de estado semánticos */
+  --color-success: #27ae60;
+  --color-error: #e74c3c;
+  --color-warning: #f39c12;
+  --color-info: #3498db;
+  
+  /* Aliases de colores principales para compatibilidad */
+  --color-primary: #000000;
+  --color-primary-dark: #0d0d0d;
+  --color-primary-light: #1a1a1a;
+  --color-secondary: #D4AF37;
+  --color-secondary-dark: #B8941F;
+  --color-secondary-light: #F4E99B;
+  --color-accent: #D4AF37;
+  
+  /* Colores temáticos para growshop */
+  --color-cannabis: #D4AF37;
+  --color-cannabis-light: #F4E99B;
+  --color-hydro: #C0A063;
+  --color-organic: #D4AF37;
+  --color-indoor: #B8941F;
+  --color-outdoor: #F4E99B;
+  
+  /* Colores de texto */
+  --color-text: #000000;
+  --color-text-light: #FFFFFF;
+  --color-text-muted: #888888;
+  --color-text-secondary: #666666;
+  --color-text-dark: #000000;
+  --color-text-gold: #D4AF37;
+  
+  /* Colores de fondo - paleta premium negro/dorado diferenciada */
+  --color-bg: #000000;
+  --color-bg-light: #0a0a0a;
+  --color-bg-alt: #1a1a1a;
+  --color-bg-dark: #000000;
+  --color-bg-content: #0f0f0f;
+  --color-bg-dark-offset: #0a0a0a;
+  --color-bg-card: #1a1a1a;
+  --color-bg-card-light: #2a2a2a;
+  --color-bg-features: #151515;
+  --color-bg-overlay: rgba(0, 0, 0, 0.9);
+  
+  /* Bordes */
+  --color-border: #dee2e6;
+  --color-border-light: #e9ecef;
+  --color-border-dark: #444;
+  
+  /* Sombras */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Radios de borde */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+  
+  /* Espaciado */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* Tipografía */
+  --font-family-primary: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Bronova', 'Poppins', sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+  
+  /* Pesos de fuente */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Tamaños de fuente */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  
+  /* Alturas de línea */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Transiciones */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.2s ease-in-out;
+  --transition-slow: 0.3s ease-in-out;
+  --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+  
+  /* Tamaños de contenedor */
+  --container-sm: 576px;
+  --container-md: 768px;
+  --container-lg: 992px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+  
+  /* Variables específicas para componentes */
+  --header-height: 80px;
+  --sidebar-width: 280px;
+  --card-padding: var(--space-lg);
+  --button-height: 44px;
+  
+  /* Variables para notificaciones */
+  --notification-width: 360px;
+  --notification-padding: var(--space-md);
+  --notification-gap: var(--space-sm);
+  
+  /* Variables para productos */
+  --product-card-width: 280px;
+  --product-image-aspect: 1 / 1;
+  --product-grid-gap: var(--space-xl);
+}
+
+/* Tema premium forzado - sin variaciones automáticas */
+
+/* Variables para reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0s;
+    --transition-normal: 0s;
+    --transition-slow: 0s;
+    --transition-bounce: 0s;
+  }
+}
+  
+  /* Espaciado */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* Tipografía */
+  --font-family-primary: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Bronova', 'Poppins', sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+  
+  /* Pesos de fuente */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Tamaños de fuente */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  
+  /* Alturas de línea */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Transiciones */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.2s ease-in-out;
+  --transition-slow: 0.3s ease-in-out;
+  --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+  
+  /* Tamaños de contenedor */
+  --container-sm: 576px;
+  --container-md: 768px;
+  --container-lg: 992px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+  
+  /* Variables específicas para componentes */
+  --header-height: 80px;
+  --sidebar-width: 280px;
+  --card-padding: var(--space-lg);
+  --button-height: 44px; /* Mínimo para accesibilidad táctil */
+  
+  /* Variables para notificaciones */
+  --notification-width: 360px;
+  --notification-padding: var(--space-md);
+  --notification-gap: var(--space-sm);
+  
+  /* Variables para productos */
+  --product-card-width: 280px;
+  --product-image-aspect: 1 / 1;
+  --product-grid-gap: var(--space-xl);
+}
+
+/* Tema premium forzado - sin variaciones automáticas */
+
+/* Variables para reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0s;
+    --transition-normal: 0s;
+    --transition-slow: 0s;
+    --transition-bounce: 0s;
+  }
+}

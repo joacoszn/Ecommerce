@@ -1,0 +1,326 @@
+/* ================================================
+   PÁGINA DE PRODUCTOS - THC GROWSHOP
+   ================================================ */
+
+/* Hero específico para productos */
+.page--productos .page-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-primary) 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Filtros premium para productos */
+.filters-container {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(0, 0, 0, 0.95) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.filters-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+}
+
+.filters-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-lg);
+  align-items: flex-end;
+  overflow-x: auto;
+  padding-bottom: var(--space-sm);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.filters-grid::-webkit-scrollbar {
+  height: 4px;
+}
+
+.filters-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.filter-group {
+  margin-bottom: 0;
+  min-width: 160px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.filter-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.filter-select {
+  width: 100%;
+  padding: var(--space-md) var(--space-2xl) var(--space-md) var(--space-md);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.8) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  border-radius: var(--radius-md);
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-normal);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-md) top 50%;
+  background-size: 14px auto;
+  transition: var(--transition-normal);
+  height: 52px;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.filter-select:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 
+    0 0 0 3px rgba(212, 175, 55, 0.3),
+    0 8px 25px rgba(212, 175, 55, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(26, 26, 26, 1) 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.filter-select option {
+  background-color: var(--color-bg-dark) !important;
+  color: var(--color-text-light) !important;
+  padding: var(--space-sm);
+}
+
+/* Búsqueda premium */
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: 350px;
+  min-width: 220px;
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--space-md) var(--space-2xl) var(--space-md) 3.5rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-normal);
+  transition: var(--transition-normal);
+  height: 52px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.search-input:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 
+    0 0 0 3px rgba(212, 175, 55, 0.3),
+    0 8px 30px rgba(212, 175, 55, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  outline: none;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(26, 26, 26, 1) 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.search-input::placeholder {
+  color: rgba(212, 175, 55, 0.6);
+  font-style: normal;
+  font-weight: var(--font-weight-light);
+  letter-spacing: 0.5px;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-secondary);
+  font-size: var(--font-size-lg);
+  z-index: 3;
+  transition: var(--transition-normal);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container:focus-within .search-icon {
+  color: var(--color-secondary-light);
+  transform: translateY(-50%) scale(1.15) rotate(5deg);
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+/* Grid de productos mejorado */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-xl);
+  margin: var(--space-xl) 0;
+}
+
+/* Estados de carga */
+.product-grid__loading {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-md);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--color-secondary);
+  animation: spin 0.8s ease-in-out infinite;
+  margin-bottom: var(--space-lg);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Sin resultados */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem var(--space-xl);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-md);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.no-results__icon {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--space-xl);
+}
+
+.no-results__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+}
+
+.no-results__message {
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-xl) 0 var(--space-2xl);
+  gap: var(--space-sm);
+}
+
+.pagination__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pagination__link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pagination__link--active {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.pagination__link--disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  background: transparent;
+}
+
+.pagination__pages {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .filters-grid {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .filter-group {
+    min-width: auto;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .filters-container {
+    padding: var(--space-lg);
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+}

@@ -1,0 +1,266 @@
+/* ================================================
+   RESET CSS MODERNO - THC GROWSHOP
+   ================================================ */
+
+/* Fuentes e imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Bronova';
+  src: url('../../fonts/Bronova Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bronova';
+  src: url('../../fonts/Bronova Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bronova';
+  src: url('../../fonts/Bronova Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset moderno basado en Josh Comeau's CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  /* Tema premium forzado */
+  background-color: var(--color-bg-dark) !important;
+  color: var(--color-text-light) !important;
+  
+  /* Mejorar la legibilidad del texto */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  
+  /* Scroll suave */
+  scroll-behavior: smooth;
+  
+  /* Mejorar el renderizado de fuentes */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Tamaño de tab más legible */
+  -moz-tab-size: 4;
+  tab-size: 4;
+  
+  /* Altura de línea base */
+  line-height: var(--line-height-normal);
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-light) !important;
+  background-color: var(--color-bg-content) !important;
+  
+  /* Prevenir overflow horizontal */
+  overflow-x: hidden;
+  
+  /* Mejorar el rendimiento de scroll en iOS */
+  -webkit-overflow-scrolling: touch;
+  
+  /* Asegurar que no hay otros colores de fondo */
+  min-height: 100vh;
+}
+
+/* Mejorar la consistencia de altura de línea en todos los elementos */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1, h2, h3, h4, h5, h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* Evitar problemas de altura con imágenes y videos */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remover estilos de lista por defecto */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Mejorar consistencia de formularios */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Prevenir desbordamiento de texto */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Crear stacking context para elementos comunes */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Mejorar accesibilidad para usuarios que prefieren reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Estilos para elementos focusables */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Mejorar legibilidad de selección de texto */
+::selection {
+  background-color: var(--color-secondary-light);
+  color: var(--color-text-light);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: var(--color-secondary-light);
+  color: var(--color-text-light);
+  text-shadow: none;
+}
+
+/* Estilos para scrollbars (webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Ocultar scrollbars en Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-dark) var(--color-bg-alt);
+}

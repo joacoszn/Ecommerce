@@ -1,0 +1,562 @@
+/* ================================================
+   PÁGINA DE SEMILLAS - THC GROWSHOP
+   ================================================ */
+
+/* Hero específico para semillas */
+.page--semillas .page-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-primary) 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Tarjetas de semilla específicas - heredan de product-card */
+.seed-card {
+  /* Las tarjetas de semillas ahora usan .product-card como base */
+}
+
+.seed-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.seed-card--unavailable {
+  opacity: 0.7;
+}
+
+/* Badges específicos para genética de semillas */
+.product-card__badge--genetics {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+.product-card__badge--indica {
+  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  color: var(--color-text-light);
+}
+
+.product-card__badge--sativa {
+  background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+  color: var(--color-text-light);
+}
+
+.product-card__badge--hibrida {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: var(--color-text-light);
+}
+
+/* Semillas usan el mismo layout horizontal que productos */
+
+/* Información específica de semillas en descripción compacta */
+.seed-card__description {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  opacity: 0.9;
+}
+
+/* Banco de semillas con estilo */
+.seed-card__bank {
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+  padding: 2px var(--space-xs);
+  border-radius: var(--radius-xs);
+  display: inline-block;
+}
+
+/* Título de semilla ajustado */
+.seed-card__title {
+  font-size: var(--font-size-xs) !important;
+  line-height: 1.2 !important;
+  margin-bottom: 3px !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  text-overflow: unset !important;
+  display: block !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+/* Especificaciones mejoradas */
+.seed-card__specs-row {
+  display: flex;
+  gap: var(--space-xs);
+  margin: var(--space-xs) 0;
+}
+
+.seed-spec {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-xs);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.seed-spec:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.09) 100%);
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-1px);
+}
+
+.seed-spec__label {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: rgba(212, 175, 55, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 2px;
+}
+
+.seed-spec__value {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Efectos mini visibles */
+.seed-card__effects-mini {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.seed-effect-tag {
+  font-size: var(--font-size-xs);
+  padding: 2px var(--space-sm);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+  color: var(--color-text-dark);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+/* Estilos para la información expandida de semillas */
+.seed-card__specs {
+  margin-bottom: var(--space-md);
+}
+
+.seed-card__specs h4 {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+}
+
+.seed-card__specs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seed-card__specs li {
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.seed-card__specs li:last-child {
+  border-bottom: none;
+}
+
+.seed-card__specs li strong {
+  color: var(--color-secondary);
+}
+
+.seed-card__effects h4,
+.seed-card__flavors h4 {
+  margin: var(--space-md) 0 var(--space-sm) 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+}
+
+.seed-card__effects-list,
+.seed-card__flavors-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.seed-card__effect,
+.seed-card__flavor {
+  padding: var(--space-xs) var(--space-sm);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+  color: var(--color-text-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: capitalize;
+}
+
+/* Semillas heredan estilos de productos para imágenes */
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.seed-card:hover .seed-card__image {
+  transform: scale(1.05);
+}
+
+/* Badges para semillas */
+.seed-card__badges {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  z-index: 2;
+}
+
+.seed-card__badge {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.seed-card__badge--featured {
+  background: rgba(39, 174, 96, 0.9);
+  color: var(--color-text-light);
+}
+
+.seed-card__badge--sale {
+  background: rgba(231, 76, 60, 0.9);
+  color: var(--color-text-light);
+}
+
+.seed-card__badge--unavailable {
+  background: rgba(108, 117, 125, 0.9);
+  color: var(--color-text-light);
+}
+
+/* Badge de genética */
+.seed-card__genetics-badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.seed-card__genetics-badge--indica {
+  background: rgba(156, 39, 176, 0.9);
+  color: var(--color-text-light);
+}
+
+.seed-card__genetics-badge--sativa {
+  background: rgba(255, 152, 0, 0.9);
+  color: var(--color-text-light);
+}
+
+.seed-card__genetics-badge--hibrida {
+  background: rgba(76, 175, 80, 0.9);
+  color: var(--color-text-light);
+}
+
+/* Contenido de la tarjeta de semilla */
+.seed-card__content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.seed-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.seed-card__bank {
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.seed-card__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.seed-card__stars {
+  display: flex;
+  gap: 1px;
+}
+
+.seed-card__stars i {
+  font-size: var(--font-size-xs);
+  color: #ffc107;
+}
+
+.seed-card__reviews {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.seed-card__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+  line-height: var(--line-height-tight);
+}
+
+.seed-card__description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--space-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Especificaciones de semillas */
+.seed-card__specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.seed-card__spec {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-xs);
+  backdrop-filter: blur(5px);
+  transition: all var(--transition-normal);
+}
+
+.seed-card__spec:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+.seed-card__spec-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: rgba(212, 175, 55, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  font-weight: var(--font-weight-medium);
+}
+
+.seed-card__spec-value {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Efectos de semillas */
+.seed-card__effects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.seed-card__effect {
+  padding: 3px var(--space-sm);
+  background: var(--color-secondary);
+  color: var(--color-text-light);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+/* Línea horizontal degradada */
+.seed-card__divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+  margin: var(--space-sm) 0;
+}
+
+.seed-card__footer {
+  margin-top: auto;
+}
+
+.seed-card__pricing {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.seed-card__price {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+}
+
+.seed-card__original-price {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+/* Acciones de semillas */
+.seed-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.seed-card__main-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.seed-card__add-to-cart {
+  flex: 1;
+  max-width: 140px;
+  min-width: 120px;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+  order: 1;
+}
+
+.seed-card__main-actions .quantity-selector {
+  flex: 1;
+  max-width: 200px;
+  min-width: 180px;
+  order: 2;
+}
+
+.seed-card__secondary-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.seed-card__controls-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.seed-card__action-buttons {
+  display: flex;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.seed-card__action-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgba(212, 175, 55, 0.8);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.seed-card__action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.seed-card__action-btn:hover {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light));
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.seed-card__action-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.seed-card__action-btn:active {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .seed-card__main-actions {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  
+  .seed-card__add-to-cart {
+    order: 1;
+    width: 100%;
+    max-width: none;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .seed-card__main-actions .quantity-selector {
+    order: 2;
+    flex: 1;
+  }
+  
+  .seed-card__action-buttons {
+    order: 3;
+    justify-content: center;
+  }
+}

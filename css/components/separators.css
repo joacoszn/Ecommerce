@@ -1,0 +1,185 @@
+/* ================================================
+   SEPARADORES PREMIUM - THC GROWSHOP
+   ================================================ */
+
+/* Separador premium para usar antes del footer */
+.premium-separator {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.premium-separator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.1) 10%,
+    rgba(212, 175, 55, 0.3) 25%,
+    rgba(212, 175, 55, 0.6) 40%,
+    rgba(212, 175, 55, 1) 50%,
+    rgba(212, 175, 55, 0.6) 60%,
+    rgba(212, 175, 55, 0.3) 75%,
+    rgba(212, 175, 55, 0.1) 90%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  box-shadow: 
+    0 0 8px rgba(212, 175, 55, 0.3),
+    0 0 20px rgba(212, 175, 55, 0.1);
+  z-index: 1;
+}
+
+.premium-separator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(
+    circle,
+    var(--color-secondary) 0%,
+    var(--color-secondary-dark) 70%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 0 15px rgba(212, 175, 55, 0.6),
+    inset 0 0 5px rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+/* Separador con patrón de puntos decorativos */
+.premium-separator--dots {
+  height: 40px;
+}
+
+.premium-separator--dots::before {
+  background: none;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle at 20% 50%, 
+    rgba(212, 175, 55, 0.3) 1px, 
+    transparent 1px
+  ),
+  radial-gradient(
+    circle at 40% 50%, 
+    rgba(212, 175, 55, 0.5) 1px, 
+    transparent 1px
+  ),
+  radial-gradient(
+    circle at 60% 50%, 
+    rgba(212, 175, 55, 0.5) 1px, 
+    transparent 1px
+  ),
+  radial-gradient(
+    circle at 80% 50%, 
+    rgba(212, 175, 55, 0.3) 1px, 
+    transparent 1px
+  );
+  background-size: 50px 50px, 50px 50px, 50px 50px, 50px 50px;
+}
+
+.premium-separator--dots::after {
+  display: none;
+}
+
+/* Separador con texto central */
+.premium-separator--text {
+  height: 80px;
+}
+
+.premium-separator--text .separator-text {
+  position: relative;
+  z-index: 3;
+  background-color: var(--color-bg-dark);
+  padding: 0 var(--space-lg);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-light);
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Variante minimalista para páginas internas */
+.premium-separator--minimal {
+  height: 30px;
+  margin: var(--space-xl) 0;
+}
+
+.premium-separator--minimal::before {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.2) 30%,
+    rgba(212, 175, 55, 0.6) 50%,
+    rgba(212, 175, 55, 0.2) 70%,
+    transparent 100%
+  );
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+}
+
+.premium-separator--minimal::after {
+  width: 6px;
+  height: 6px;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Animación sutil para el punto central */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 15px rgba(212, 175, 55, 0.6),
+      inset 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 25px rgba(212, 175, 55, 0.8),
+      inset 0 0 8px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.premium-separator::after {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .premium-separator {
+    height: 40px;
+    margin: var(--space-xl) 0;
+  }
+  
+  .premium-separator--text {
+    height: 60px;
+  }
+  
+  .premium-separator--text .separator-text {
+    font-size: var(--font-size-xs);
+    letter-spacing: 2px;
+    padding: 0 var(--space-md);
+  }
+}
+
+/* Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .premium-separator::after {
+    animation: none;
+  }
+}

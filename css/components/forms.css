@@ -1,0 +1,426 @@
+/* ================================================
+   FORMULARIOS - THC GROWSHOP
+   ================================================ */
+
+/* Contenedores de formulario */
+.form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* Etiquetas */
+.form-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.form-label--required::after {
+  content: ' *';
+  color: var(--color-error);
+}
+
+/* Controles de formulario base */
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: var(--button-height);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-clip: padding-box;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-control:focus {
+  border-color: var(--color-secondary);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(184, 148, 31, 0.1);
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: var(--color-bg-alt);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-control::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+/* Estados de validación */
+.form-control.is-valid {
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+.form-control.is-invalid {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Tamaños de control */
+.form-control--sm {
+  min-height: 36px;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+
+.form-control--lg {
+  min-height: 52px;
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--font-size-lg);
+}
+
+/* Textarea */
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Select */
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right var(--space-sm) center;
+  background-size: 16px 12px;
+  padding-right: var(--space-2xl);
+}
+
+.form-select:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23B8941F' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Checkbox y Radio */
+.form-check {
+  display: block;
+  position: relative;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.form-check-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.form-check-input[type="radio"] {
+  border-radius: 50%;
+}
+
+.form-check-input:checked {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.form-check-input:checked[type="checkbox"] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form-check-input:checked[type="radio"] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3ccircle fill='%23fff' cx='10' cy='10' r='4'/%3e%3c/svg%3e");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(184, 148, 31, 0.1);
+}
+
+.form-check-label {
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Switch */
+.form-switch .form-check-input {
+  width: 44px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background-position: left center;
+  background-size: contain;
+  transition: var(--transition-normal);
+}
+
+.form-switch .form-check-input:checked {
+  background-position: right center;
+}
+
+.form-switch .form-check-input::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-bg);
+  border-radius: 50%;
+  transition: var(--transition-normal);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translateX(20px);
+}
+
+/* Input groups */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group > .form-control {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-muted);
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+}
+
+.input-group:not(.has-validation) > :not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > :not(:first-child) {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Búsqueda mejorada */
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  padding-left: var(--space-2xl);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: var(--space-md);
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mensaje de ayuda */
+.form-text {
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Mensajes de validación */
+.valid-feedback,
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.valid-feedback {
+  color: var(--color-success);
+}
+
+.invalid-feedback {
+  color: var(--color-error);
+}
+
+.is-valid ~ .valid-feedback {
+  display: block;
+}
+
+.is-invalid ~ .invalid-feedback {
+  display: block;
+}
+
+/* Floating labels */
+.form-floating {
+  position: relative;
+}
+
+.form-floating > .form-control {
+  height: calc(3.5rem + 2px);
+  line-height: 1.25;
+  padding: 1rem 0.75rem 0.25rem;
+}
+
+.form-floating > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+/* Rangos */
+.form-range {
+  width: 100%;
+  height: 1.5rem;
+  padding: 0;
+  background-color: transparent;
+  appearance: none;
+}
+
+.form-range:focus {
+  outline: 0;
+}
+
+.form-range::-webkit-slider-track {
+  width: 100%;
+  height: 0.5rem;
+  color: transparent;
+  cursor: pointer;
+  background-color: var(--color-border);
+  border-color: transparent;
+  border-radius: 1rem;
+}
+
+.form-range::-webkit-slider-thumb {
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.25rem;
+  background-color: var(--color-secondary);
+  border: 0;
+  border-radius: 1rem;
+  transition: var(--transition-normal);
+  appearance: none;
+}
+
+.form-range::-webkit-slider-thumb:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.form-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px var(--color-bg), 0 0 0 0.25rem rgba(184, 148, 31, 0.25);
+}
+
+/* Filtros específicos para productos */
+.filter-label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.filter-select {
+  background-color: var(--color-bg);
+  border-color: var(--color-border-dark);
+  font-weight: var(--font-weight-medium);
+}
+
+.filter-select:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(184, 148, 31, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-control {
+    font-size: 16px; /* Prevenir zoom en iOS */
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group > :not(:last-child),
+  .input-group > :not(:first-child) {
+    border-radius: var(--radius-md);
+    margin-left: 0;
+    margin-top: -1px;
+  }
+  
+  .input-group-text {
+    border-radius: var(--radius-md);
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .form-control {
+    background-color: var(--color-bg-alt);
+    border-color: var(--color-border-dark);
+    color: var(--color-text-light);
+  }
+  
+  .form-control:focus {
+    border-color: var(--color-secondary);
+    background-color: var(--color-bg);
+  }
+  
+  .input-group-text {
+    background-color: var(--color-bg-dark);
+    border-color: var(--color-border-dark);
+    color: var(--color-text-light);
+  }
+}

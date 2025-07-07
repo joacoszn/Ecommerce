@@ -1,0 +1,477 @@
+/* ================================================
+   SISTEMA DE BOTONES - THC GROWSHOP
+   ================================================ */
+
+/* Botón base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  min-height: var(--button-height); /* 44px mínimo para accesibilidad táctil */
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  user-select: none;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+  
+  /* Mejorar accesibilidad */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Optimización para performance */
+  will-change: transform, background-color, border-color;
+  transform: translateZ(0);
+}
+
+/* Estados de enfoque mejorados */
+.btn:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(184, 148, 31, 0.2);
+}
+
+/* Estados deshabilitados */
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+/* Estados de carga */
+.btn--loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn--loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: button-spin 0.8s linear infinite;
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tamaños de botón */
+.btn--xs {
+  min-height: 32px;
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-xs);
+}
+
+.btn--sm {
+  min-height: 36px;
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-xs);
+}
+
+.btn--lg {
+  min-height: 52px;
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-base);
+}
+
+.btn--xl {
+  min-height: 60px;
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: var(--font-size-lg);
+}
+
+/* Botón de ancho completo */
+.btn--full {
+  width: 100%;
+}
+
+/* VARIANTES DE BOTÓN */
+
+/* Botón primario - Corregido para contraste WCAG AA */
+.btn--primary {
+  color: var(--color-text-light);
+  background-color: var(--color-secondary); /* Dorado más oscuro para mejor contraste */
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botón secundario */
+.btn--secondary {
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Botón outline */
+.btn--outline {
+  color: var(--color-secondary);
+  background-color: transparent;
+  border-color: var(--color-secondary);
+}
+
+.btn--outline:hover:not(:disabled) {
+  color: var(--color-text-light);
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* Botón ghost */
+.btn--ghost {
+  color: var(--color-secondary);
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background-color: rgba(184, 148, 31, 0.1);
+  border-color: transparent;
+}
+
+/* Botón de enlace */
+.btn--link {
+  color: var(--color-secondary);
+  background: none;
+  border: none;
+  text-decoration: underline;
+  padding: var(--space-xs) 0;
+  min-height: auto;
+  box-shadow: none;
+}
+
+.btn--link:hover:not(:disabled) {
+  color: var(--color-secondary-dark);
+  background: none;
+  text-decoration: none;
+  transform: none;
+}
+
+/* VARIANTES TEMÁTICAS PARA GROWSHOP */
+
+/* Botón cannabis */
+.btn--cannabis {
+  color: var(--color-text-light);
+  background-color: var(--color-cannabis);
+  border-color: var(--color-cannabis);
+}
+
+.btn--cannabis:hover:not(:disabled) {
+  background-color: var(--color-cannabis-light);
+  border-color: var(--color-cannabis-light);
+  transform: translateY(-1px);
+}
+
+/* Botón orgánico */
+.btn--organic {
+  color: var(--color-text-light);
+  background-color: var(--color-organic);
+  border-color: var(--color-organic);
+}
+
+.btn--organic:hover:not(:disabled) {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  transform: translateY(-1px);
+}
+
+/* Botón hidropónico */
+.btn--hydro {
+  color: var(--color-text-light);
+  background-color: var(--color-hydro);
+  border-color: var(--color-hydro);
+}
+
+.btn--hydro:hover:not(:disabled) {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+/* VARIANTES DE ESTADO */
+
+/* Botón de éxito */
+.btn--success {
+  color: var(--color-text-light);
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.btn--success:hover:not(:disabled) {
+  background-color: #229954;
+  border-color: #229954;
+  transform: translateY(-1px);
+}
+
+/* Botón de error/peligro */
+.btn--danger {
+  color: var(--color-text-light);
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background-color: #c0392b;
+  border-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* Botón de advertencia */
+.btn--warning {
+  color: var(--color-text-light);
+  background-color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+
+.btn--warning:hover:not(:disabled) {
+  background-color: #d68910;
+  border-color: #d68910;
+  transform: translateY(-1px);
+}
+
+/* GRUPOS DE BOTONES */
+.btn-group {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn-group .btn {
+  position: relative;
+  margin-right: -2px;
+  border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+.btn-group .btn:last-child {
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  margin-right: 0;
+}
+
+.btn-group .btn:hover,
+.btn-group .btn:focus {
+  z-index: 1;
+}
+
+/* EFECTOS ESPECIALES */
+
+/* Botón con efecto ripple */
+.btn--ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn--ripple:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Botón con icono */
+.btn--icon-left .btn__icon {
+  margin-right: var(--space-xs);
+}
+
+.btn--icon-right .btn__icon {
+  margin-left: var(--space-xs);
+}
+
+.btn--icon-only {
+  padding: var(--space-sm);
+  aspect-ratio: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 48px; /* Área táctil más grande en móviles */
+    padding: var(--space-md) var(--space-lg);
+  }
+  
+  .btn--sm {
+    min-height: 40px;
+  }
+  
+  .btn--lg {
+    min-height: 56px;
+  }
+  
+  .btn--xl {
+    min-height: 64px;
+  }
+}
+
+/* BOTONES DE TARJETA DE PRODUCTO */
+
+/* Botón base para acciones de tarjeta */
+.btn--card-action {
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: normal;
+  flex-shrink: 0;
+}
+
+.btn--card-action:hover:not(:disabled) {
+  background-color: var(--color-secondary);
+  color: var(--color-text-dark);
+  transform: scale(1.05);
+}
+
+/* Botón de información */
+.btn--card-info {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+}
+
+.btn--card-info:hover:not(:disabled) {
+  background-color: var(--color-secondary);
+  color: var(--color-text-dark);
+}
+
+/* Botón de carrito */
+.btn--card-cart {
+  background-color: var(--color-secondary);
+  color: var(--color-text-dark);
+}
+
+.btn--card-cart:hover:not(:disabled) {
+  background-color: var(--color-secondary-light);
+  color: var(--color-text-dark);
+}
+
+.btn--card-cart--in-cart {
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-alt) 100%);
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+}
+
+.btn--card-cart--in-cart:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+  color: var(--color-text-dark);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
+}
+
+.btn--card-cart:disabled {
+  background-color: var(--color-text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ANIMACIONES PARA CARRITO */
+@keyframes cart-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.btn--add-to-cart:active {
+  animation: cart-bounce 0.3s ease-in-out;
+}
+
+/* RESPONSIVE PARA BOTONES DE TARJETA */
+@media (max-width: 768px) {
+  .btn--card-action {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn--card-action {
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+  }
+}
+
+/* Reducir movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+    transform: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  .btn--add-to-cart:active {
+    animation: none;
+  }
+}

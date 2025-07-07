@@ -1,0 +1,401 @@
+/* ================================================
+   HEADER Y NAVEGACIÓN - THC GROWSHOP
+   ================================================ */
+
+/* Header principal */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-bg-dark) !important;
+  border-bottom: 1px solid var(--color-border-dark);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.main-header.scrolled {
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+/* Navegación principal */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  padding: var(--space-sm) 0;
+}
+
+/* Logo */
+.main-nav__logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+.main-nav__logo-link:hover {
+  transform: scale(1.05);
+}
+
+.main-nav__logo-img {
+  max-height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* Menú de navegación */
+.main-nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__item {
+  position: relative;
+}
+
+.main-nav__link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  font-family: 'Bronova', var(--font-family-heading);
+  font-weight: 300;
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+.main-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: var(--transition-normal);
+  transform: translateX(-50%);
+}
+
+.main-nav__link:hover,
+.main-nav__link--active {
+  color: var(--color-secondary);
+}
+
+.main-nav__link:hover::after,
+.main-nav__link--active::after {
+  width: 100%;
+}
+
+/* Botón de menú móvil */
+.main-nav__mobile-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: var(--space-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-normal);
+}
+
+.main-nav__mobile-toggle:hover {
+  background-color: var(--color-bg-alt);
+}
+
+.main-nav__toggle-icon,
+.main-nav__toggle-icon::before,
+.main-nav__toggle-icon::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-light);
+  transition: var(--transition-normal);
+}
+
+.main-nav__toggle-icon {
+  position: relative;
+}
+
+.main-nav__toggle-icon::before,
+.main-nav__toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.main-nav__toggle-icon::before {
+  top: -8px;
+}
+
+.main-nav__toggle-icon::after {
+  bottom: -8px;
+}
+
+/* Animación del menú hamburguesa */
+.main-nav__mobile-toggle[aria-expanded="true"] .main-nav__toggle-icon {
+  background-color: transparent;
+}
+
+.main-nav__mobile-toggle[aria-expanded="true"] .main-nav__toggle-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.main-nav__mobile-toggle[aria-expanded="true"] .main-nav__toggle-icon::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* Acciones del header */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header__search-toggle,
+.header__cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  position: relative;
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+}
+
+.header__search-toggle:hover,
+.header__cart:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-secondary);
+  transform: scale(1.1);
+}
+
+.header__search-toggle:focus-visible,
+.header__cart:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Contador del carrito */
+.header__cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 var(--space-xs);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--color-text-light);
+  background-color: var(--color-error);
+  border-radius: var(--radius-full);
+  transform: scale(0);
+  transition: var(--transition-bounce);
+}
+
+.header__cart-count.has-items {
+  transform: scale(1);
+}
+
+/* Animación de agregado al carrito */
+@keyframes cart-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.header__cart.cart-updated {
+  animation: cart-bounce 0.3s ease-in-out;
+}
+
+/* Búsqueda en header */
+.header__search {
+  display: none;
+  padding: var(--space-md) 0;
+  background-color: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+}
+
+.search-form {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-form__input {
+  width: 100%;
+  padding: var(--space-md) var(--space-2xl) var(--space-md) var(--space-md);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+}
+
+.search-form__input:focus {
+  border-color: var(--color-secondary);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(184, 148, 31, 0.1);
+}
+
+.search-form__submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-2xl);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.search-form__submit:hover {
+  color: var(--color-secondary);
+  background-color: var(--color-bg-alt);
+}
+
+/* RESPONSIVE */
+@media (max-width: 991.98px) {
+  .main-nav__mobile-toggle {
+    display: flex;
+  }
+  
+  .main-nav__list {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-lg) 0;
+    background-color: var(--color-bg);
+    overflow-y: auto;
+    z-index: var(--z-dropdown);
+    box-shadow: var(--shadow-lg);
+    
+    /* Usar height: 100dvh para mejor soporte móvil */
+    height: calc(100dvh - var(--header-height));
+  }
+  
+  .main-nav__list.is-open {
+    display: flex;
+  }
+  
+  .main-nav__item {
+    margin: 0;
+  }
+  
+  .main-nav__link {
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: 0;
+    font-size: var(--font-size-base);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  
+  .main-nav__link::after {
+    display: none;
+  }
+  
+  .header__search {
+    display: block;
+  }
+  
+  /* Evitar scroll del body cuando el menú está abierto */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 992px) {
+  .header__search-toggle {
+    display: none;
+  }
+  
+  .header__search {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav {
+    padding: var(--space-xs) 0;
+  }
+  
+  .main-nav__logo-img {
+    max-height: 40px;
+  }
+  
+  .header__actions {
+    gap: var(--space-sm);
+  }
+  
+  .header__search-toggle,
+  .header__cart {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Estados de carga */
+.main-header.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .main-nav__logo-link:hover {
+    transform: none;
+  }
+  
+  .header__search-toggle:hover,
+  .header__cart:hover {
+    transform: none;
+  }
+  
+  .header__cart.cart-updated {
+    animation: none;
+  }
+}

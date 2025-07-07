@@ -1,0 +1,73 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #81c784, #388e3c);
+    color: white;
+}
+
+header {
+    text-align: center;
+    background-color: #2e7d32;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap; /* Para que se acomoden en móviles */
+    justify-content: center;
+    gap: 20px;
+}
+
+.card img {
+    width: 100%; /* Que ocupe todo el espacio del contenedor */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados opcionales */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.resenas-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2e7d32;
+}
+
+/* Diseño responsivo */
+@media (max-width: 600px) {
+    .productos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .resenas-container {
+        grid-template-columns: 1fr;
+    }
+}

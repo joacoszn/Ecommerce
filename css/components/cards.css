@@ -1,0 +1,627 @@
+/* ================================================
+   TARJETAS DE PRODUCTO - THC GROWSHOP
+   ================================================ */
+
+/* Grid de productos */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+/* Tarjeta base */
+.product-card {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  overflow: visible;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  height: 110px;
+  position: relative;
+  min-width: 0;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Contenedor de imagen optimizado para CLS */
+.product-card__image-container {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: none;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  border: none;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: var(--transition-normal);
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  /* Imagen siempre expandida para quitar bordes */
+  transform: scale(1.1);
+  will-change: transform;
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.15);
+}
+
+/* Badges de producto */
+.product-card__badges {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  z-index: 1;
+}
+
+.product-card__badges--left {
+  top: var(--space-sm);
+  left: var(--space-sm);
+}
+
+.product-card__badges--right {
+  top: var(--space-sm);
+  right: var(--space-sm);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--color-text-light);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* Badges temáticos */
+.badge--new {
+  background-color: var(--color-success);
+}
+
+.badge--sale {
+  background-color: var(--color-error);
+}
+
+.badge--organic {
+  background-color: var(--color-organic);
+}
+
+.badge--cannabis {
+  background-color: var(--color-cannabis);
+}
+
+.badge--hydro {
+  background-color: var(--color-hydro);
+}
+
+.badge--indoor {
+  background-color: var(--color-indoor);
+}
+
+.badge--outdoor {
+  background-color: var(--color-outdoor);
+}
+
+/* Badges para semillas */
+.badge--thc {
+  background-color: #8E44AD;
+}
+
+.badge--cbd {
+  background-color: #3498DB;
+}
+
+.badge--auto {
+  background-color: #E67E22;
+}
+
+.badge--fem {
+  background-color: #E91E63;
+}
+
+/* Contenido de la tarjeta */
+.product-card__content {
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Información principal de la tarjeta */
+.product-card__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.product-card__category {
+  display: none; /* Ocultar categoría para diseño más limpio */
+}
+
+.product-card__title {
+  margin: 0 0 2px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Descripción con limitación de líneas para consistencia */
+.product-card__description--preview {
+  margin-bottom: 4px;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.3;
+  
+  /* Limitar a 1 línea para layout más compacto */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+/* Descripción expandida */
+.product-card__description-expanded {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-dark) 100%);
+  padding: var(--space-md);
+  z-index: 10;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl), 0 0 0 2px var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  display: none;
+}
+
+.product-card__description-expanded h4 {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+}
+
+.product-card__description-expanded ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-card__description-expanded li {
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.product-card__description-expanded li:last-child {
+  border-bottom: none;
+}
+
+.product-card__description-expanded li strong {
+  color: var(--color-secondary);
+}
+
+.product-card__description--full {
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Botón de cerrar en vista expandida */
+.product-card__close-btn {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary);
+  color: var(--color-text-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  transition: var(--transition-normal);
+}
+
+.product-card__close-btn:hover {
+  background-color: var(--color-secondary-light);
+  transform: scale(1.1);
+}
+
+/* Especificaciones para semillas */
+.product-card__specs {
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.product-card__specs p {
+  margin-bottom: var(--space-xs);
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card__specs strong {
+  color: var(--color-text);
+}
+
+/* Precios */
+.product-card__price {
+  margin: 0 0 var(--space-md);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.product-card__price--original {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.product-card__price--discount {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-error);
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+/* Stock indicator */
+.product-card__stock {
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.product-card__stock--in-stock {
+  color: var(--color-success);
+}
+
+.product-card__stock--low-stock {
+  color: var(--color-warning);
+}
+
+.product-card__stock--out-of-stock {
+  color: var(--color-error);
+}
+
+/* Footer de la tarjeta */
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  margin-top: auto;
+}
+
+/* Precio */
+.product-card__pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-card__price {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  line-height: 1;
+}
+
+.product-card__original-price {
+  font-size: 10px;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  line-height: 1;
+}
+
+/* Selector de cantidad compacto */
+.product-card__quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.quantity-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: var(--color-text-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.quantity-btn:hover {
+  background-color: var(--color-secondary-light);
+  transform: scale(1.1);
+}
+
+.quantity-input {
+  width: 24px;
+  height: 18px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-light);
+  text-align: center;
+  font-size: 10px;
+  font-weight: var(--font-weight-medium);
+}
+
+.quantity-input:focus {
+  outline: none;
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-xs);
+}
+
+/* Acciones de la tarjeta */
+.product-card__actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.product-card__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.product-card__rating-stars {
+  color: var(--color-warning);
+}
+
+/* Variantes de tarjeta */
+
+/* Tarjeta compacta */
+.product-card--compact {
+  flex-direction: row;
+  max-width: none;
+}
+
+.product-card--compact .product-card__image-container {
+  width: 120px;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+}
+
+.product-card--compact .product-card__content {
+  padding: var(--space-md);
+}
+
+/* Tarjeta destacada */
+.product-card--featured {
+  border: 2px solid var(--color-secondary);
+  position: relative;
+}
+
+.product-card--featured::before {
+  content: 'Destacado';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  z-index: 2;
+}
+
+/* Estados de carga */
+.product-card--loading {
+  pointer-events: none;
+}
+
+.product-card--loading .product-card__image {
+  background: linear-gradient(90deg, var(--color-bg-alt) 25%, var(--color-border-light) 50%, var(--color-bg-alt) 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .product-card {
+    height: 100px;
+  }
+  
+  .product-card__image-container {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .product-card__content {
+    padding: var(--space-xs);
+  }
+  
+  .product-card__title {
+    font-size: 11px;
+  }
+  
+  .product-card__price {
+    font-size: var(--font-size-xs);
+  }
+  
+  .product-card__quantity-controls {
+    padding: 1px;
+    gap: 1px;
+  }
+  
+  .quantity-btn {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    border-radius: 50%;
+  }
+  
+  .quantity-input {
+    width: 20px;
+    height: 16px;
+    font-size: 9px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    height: 90px;
+  }
+  
+  .product-card__image-container {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .product-card__content {
+    padding: 4px;
+  }
+  
+  .product-card__title {
+    font-size: 10px;
+    margin-bottom: 1px;
+  }
+  
+  .product-card__description--preview {
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+  
+  .product-card__price {
+    font-size: 11px;
+  }
+  
+  
+  .quantity-btn {
+    width: 14px;
+    height: 14px;
+    font-size: 7px;
+    border-radius: 50%;
+  }
+  
+  .quantity-input {
+    width: 18px;
+    height: 14px;
+    font-size: 8px;
+  }
+}
+
+/* Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .product-card {
+    transition: none;
+  }
+  
+  .product-card:hover {
+    transform: none;
+  }
+  
+  .product-card__image {
+    transition: none;
+  }
+  
+  .product-card:hover .product-card__image {
+    transform: none;
+  }
+  
+  .product-card--loading .product-card__image {
+    animation: none;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .product-card {
+    background-color: var(--color-bg-alt);
+  }
+  
+  .product-card__title,
+  .product-card__price {
+    color: var(--color-text-light);
+  }
+}
